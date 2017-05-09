@@ -1,7 +1,14 @@
 describe('Airport', function() {
+  //beforeEach(function() {
+    var airport = new Airport();
+  //})
+  afterEach(function() {
+    airport.terminal = [];
+  })
+
 
   describe('#landPlane', function() {
-    var airport = new Airport();
+
     airport.landPlane('plane', 'clear');
 
     it('can land a plane in the terminal', function() {
@@ -17,7 +24,7 @@ describe('Airport', function() {
     });
 
     it('cannot land a plane if the terminal is full', function() {
-      for (var i = 0; i < 24; i++) {
+      for (var i = 0; i < 25; i++) {
         airport.landPlane('plane', 'clear');
       }
 
@@ -26,7 +33,7 @@ describe('Airport', function() {
   });
 
   describe('#launchPlane', function() {
-    var airport = new Airport();
+    //var airport = new Airport();
     airport.landPlane('plane', 'clear');
     airport.launchPlane();
 
@@ -41,7 +48,7 @@ describe('Airport', function() {
 
   describe('#setCapacity', function() {
     it('sets airport capacity to 30', function() {
-      var airport = new Airport();
+      //var airport = new Airport();
       airport.setCapacity(30);
       expect(airport.capacity).toEqual(30);
     });
