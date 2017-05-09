@@ -14,3 +14,7 @@ Airport.prototype.launchPlane = function() {
   this.terminal.pop();
   return 'The plane has taken off safely';
 };
+
+Airport.prototype.setCapacity = function(capacity) {
+  this.capacity = capacity;
+};

@@ -31,11 +31,19 @@ describe('Airport', function() {
     airport.launchPlane();
 
     it('can launch a plane from the terminal', function() {
-        expect(airport.terminal).not.toContain('plane');
+      expect(airport.terminal).not.toContain('plane');
     });
 
     it('can launch a plane from the terminal', function() {
-        expect(airport.launchPlane()).toEqual('The plane has taken off safely');
+      expect(airport.launchPlane()).toEqual('The plane has taken off safely');
+    });
+  });
+
+  describe('#setCapacity', function() {
+    it('sets airport capacity to 30', function() {
+      var airport = new Airport();
+      airport.setCapacity(30);
+      expect(airport.capacity).toEqual(30);
     });
   });
 });
