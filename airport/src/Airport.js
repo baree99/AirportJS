@@ -9,4 +9,5 @@ Airport.prototype.landPlane = function(plane) {
 
 Airport.prototype.launchPlane = function() {
   this.terminal.pop();
+  return 'The plane has taken off safely';
 };
