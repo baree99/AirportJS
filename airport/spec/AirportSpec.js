@@ -13,8 +13,15 @@ describe('Airport', function() {
     });
 
     it('cannot land a plane if the weather is stormy', function() {
-      airport.landPlane('plane2', 'stormy')
-      expect(airport.terminal).not.toContain('plane2');
+      expect(airport.landPlane('plane', 'stormy')).toEqual('The weather is too stormy to fly');
+    });
+
+    it('cannot land a plane if the terminal is full', function() {
+      for (var i = 0; i < 24; i++) {
+        airport.landPlane('plane', 'clear');
+      }
+
+      expect(airport.landPlane('plane', 'clear')).toEqual('Terminal is full');
     });
   });
 
