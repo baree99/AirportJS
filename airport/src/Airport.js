@@ -2,7 +2,8 @@ function Airport() {
   this.terminal = [];
 };
 
-Airport.prototype.landPlane = function(plane) {
+Airport.prototype.landPlane = function(plane, weather = (new Weather()).storm()) {
+  if ( weather == 'stormy' ) { return }
   this.terminal.push(plane);
   return 'The plane has landed safely';
 };
