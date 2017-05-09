@@ -1,10 +1,14 @@
 describe('Airport', function() {
 
   describe('#landPlane', function() {
+    var airport = new Airport();
+    airport.landPlane('plane');
     it('can land a plane in the terminal', function() {
-        var airport = new Airport();
-        airport.landPlane('plane');
-        expect(airport.terminal).toContain('plane');
+      expect(airport.terminal).toContain('plane');
+    })
+
+    it('prints confirmation that the plane has landed', function() {
+      expect(airport.landPlane('plane')).toEqual('The plane has landed safely');
     });
   });
 
@@ -16,4 +20,6 @@ describe('Airport', function() {
         expect(airport.terminal).not.toContain('plane');
     });
   });
+
+
 });
